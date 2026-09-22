@@ -1,7 +1,7 @@
 from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import include, path, re_path
+from django.views.static import serve
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
@@ -25,5 +25,11 @@ urlpatterns = [
     path('api/', include('users.urls')),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Served by Django itself (not just in DEBUG): there is no separate static
+# host or object storage configured for uploaded media, so this is what
+# makes admin-uploaded images actually reachable in production too. Fine for
+# this project's traffic volume; Django's docs flag it as inefficient at
+# scale, which is a non-issue here.
+urlpatterns += [
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+]
