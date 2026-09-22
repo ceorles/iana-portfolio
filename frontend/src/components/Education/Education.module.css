@@ -1,0 +1,79 @@
+.wrap {
+  margin-bottom: 8px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding-left: 24px;
+  border-left: 2px solid var(--color-border);
+}
+
+.item {
+  position: relative;
+}
+
+.marker {
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-pink);
+}
+
+.year {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-green);
+  margin-bottom: 6px;
+}
+
+.school {
+  font-size: 17px;
+  margin: 0 0 4px;
+}
+
+.level {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.address {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+}
+
+.address a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.address a:hover {
+  color: var(--color-pink);
+}
+
+.address svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-pink);
+}

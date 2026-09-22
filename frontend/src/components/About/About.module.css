@@ -1,0 +1,38 @@
+.layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
+  margin-top: 44px;
+  align-items: start;
+}
+
+.introCol {
+  position: sticky;
+  top: 40px;
+}
+
+.aboutText {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2vw, 25px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text);
+  letter-spacing: -0.005em;
+}
+
+.timelineCol {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .introCol {
+    position: static;
+  }
+}
